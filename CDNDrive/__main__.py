@@ -47,7 +47,7 @@ def fetch_meta(s):
     if not url: return None
     full_meta = api.image_download(url)
     if not full_meta: return None
-    meta_dict = json.loads(encoder.decode(full_meta).decode("utf-8"))
+    meta_dict = json.loads(encoder.decode(full_meta).decode("unicode_escape"))
     return meta_dict
 
 def login_handle(args):
